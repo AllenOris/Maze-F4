@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QPainter>
+#include "f4mazemap.h"
 namespace Ui {
 class Widget;
 }
@@ -20,8 +21,9 @@ protected:
 
 private slots:
     void on_pushButton_clicked();
-
     void on_pushButton_2_clicked();
+
+    void on_pushButton_3_clicked();
 
 private:
     Ui::Widget *ui;

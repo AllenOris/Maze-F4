@@ -28,13 +28,16 @@ SOURCES += \
         widget.cpp \
     f4mazemap.cpp \
     f4point.cpp \
-    f4edge.cpp
+    f4edge.cpp \
+    test.cpp
 
 HEADERS += \
         widget.h \
     f4mazemap.h \
     f4point.h \
-    f4edge.h
+    f4edge.h \
+    test.h
 
 FORMS += \
-        widget.ui
+        widget.ui \
+    test.ui

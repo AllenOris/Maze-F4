@@ -16,3 +16,13 @@ bool F4edge::operator<(const F4edge&E)
 {
     return this->w<E.w;
 }
+
+bool operator <(const F4edge &A, const F4edge &B)
+{
+    return A.w<B.w;
+}
+
+F4edge F4edge::reverse()
+{
+    return F4edge(this->to,this->from,this->w);
+}
