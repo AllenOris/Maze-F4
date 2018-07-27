@@ -1,0 +1,61 @@
+<RCC>
+    <qresource prefix="/new/f4resource/image">
+        <file>resource/about.png</file>
+        <file>resource/background.jpg</file>
+        <file>resource/cursor.png</file>
+        <file>resource/cursor_wait.png</file>
+        <file>resource/exit.png</file>
+        <file>resource/start.png</file>
+        <file>resource/background2.jpg</file>
+        <file>resource/loading.png</file>
+        <file>resource/setting.png</file>
+        <file>resource/title1.png</file>
+        <file>resource/title2.png</file>
+        <file>resource/9.png</file>
+        <file>resource/8.png</file>
+        <file>resource/7.png</file>
+        <file>resource/6.png</file>
+        <file>resource/5.png</file>
+        <file>resource/4.png</file>
+        <file>resource/3.png</file>
+        <file>resource/2.png</file>
+        <file>resource/1.png</file>
+        <file>resource/100.png</file>
+        <file>resource/90.png</file>
+        <file>resource/80.png</file>
+        <file>resource/70.png</file>
+        <file>resource/60.png</file>
+        <file>resource/50.png</file>
+        <file>resource/40.png</file>
+        <file>resource/30.png</file>
+        <file>resource/20.png</file>
+        <file>resource/10.png</file>
+        <file>resource/0.png</file>
+        <file>resource/menu.png</file>
+        <file>resource/plus.png</file>
+        <file>resource/demo.png</file>
+        <file>resource/dark.png</file>
+        <file>resource/Set.png</file>
+        <file>resource/h.png</file>
+        <file>resource/w.png</file>
+        <file>resource/type.png</file>
+        <file>resource/size.png</file>
+        <file>resource/on.png</file>
+        <file>resource/BGM.png</file>
+        <file>resource/off.png</file>
+        <file>resource/maps.png</file>
+        <file>resource/pic_bgm1.png</file>
+        <file>resource/pic_bgm2.png</file>
+        <file>resource/setbg.jpg</file>
+        <file>resource/member.png</file>
+    </qresource>
+    <qresource prefix="/new/f4resource/music">
+        <file>resource/begscr_bgm.mp3</file>
+        <file>resource/close_door.mp3</file>
+        <file>resource/emmmm.mp3</file>
+        <file>resource/game_bgm.mp3</file>
+    </qresource>
+    <qresource prefix="/new/f4resource/qss">
+        <file>resource/stylesheet.qss</file>
+    </qresource>
+</RCC>

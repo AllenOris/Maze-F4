@@ -2,7 +2,10 @@
 #include "f4edge.h"
 #include <QTime>
 #include <QDebug>
+#include <Qqueue>
 #include <QObject>
+#include <QSet>
+#include <QStack>
 #include <queue>
 
 F4point F4mazemap::topoint(int num)
@@ -10,28 +13,13 @@ F4point F4mazemap::topoint(int num)
     return F4point(int(num%this->width)+1,int(num/this->width)+1);       //x是行，y是列
 }
 
-void F4mazemap::turntomap()
+QSet<int> F4mazemap::vectoset(QVector<int> &a)
 {
-    int n=tree.size();
-    line.resize(n+width);
-    col.resize(n+height);
-    line.fill(false);col.fill(false);
-    for(int i=0;i<tree.size();++i){
-        for(int j=0;j<tree[i].size();++j){
-            int x=tree[i][j]-i;
-            qDebug()<<x<<i<<tree[i][j];
-            F4point p=topoint(i);
-            if(x==1)
-                col[(p.y-1)*(width+1)+p.x]=true;
-            else if(x==-1)
-                col[(p.y-1)*(width+1)+p.x-1]=true;
-            else if(x==width)
-                line[p.y*width+p.x-1]=true;
-            else if(x==0-width)
-                line[(p.y-1)*width+p.x-1]=true;
-        }
+    QSet<int>s;
+    for(int i=0;i<a.size();++i){
+        s.insert(a[i]);
     }
-   // tree.clear();
+    return s;
 }
 
 F4mazemap::~F4mazemap()
@@ -50,6 +38,7 @@ F4mazemap::F4mazemap(int Height,int Width){
     make_edge();
    // Kruskal();
     Prime();
+    this->findpath();
     point_connect.clear();
     e.clear();
 }
@@ -82,13 +71,7 @@ void F4mazemap::make_edge()
             this->e.append(temp);
         }
     }
-
-    //随边权值
-
     qDebug()<<(QObject::tr("F4edge:"))<<e.size();
-//    for(int i=0;i<e.size();++i){
-//        e[i].w=
-//    }
 }
 
 void F4mazemap::Prime()
@@ -157,5 +140,67 @@ int F4mazemap::union_find(int the_point,QVector<int>&fa)
         i=j;
     }
     return r;
+}
+
+void F4mazemap::turntomap()
+{
+    int n=tree.size();
+    line.resize(n+width);
+    col.resize(n+height);
+    line.fill(false);col.fill(false);
+    for(int i=0;i<tree.size();++i){
+        for(int j=0;j<tree[i].size();++j){
+            int x=tree[i][j]-i;
+            F4point p=topoint(i);
+            if(x==1)
+                col[(p.y-1)*(width+1)+p.x]=true;
+            else if(x==-1)
+                col[(p.y-1)*(width+1)+p.x-1]=true;
+            else if(x==width)
+                line[p.y*width+p.x-1]=true;
+            else if(x==0-width)
+                line[(p.y-1)*width+p.x-1]=true;
+        }
+    }
+}
+
+void F4mazemap::clearall()
+{
+    point_connect.clear();
+    e.clear();
+    line.clear();
+    col.clear();
+    tree.clear();
+}
+
+void F4mazemap::findpath()
+{
+    //int start=0;
+    int end=tree.size()-1;
+    int p=end;
+    QStack <int> temp;
+    temp.push(end);
+    while(!tree[p].empty()){
+        temp.push(tree[p][0]);
+        p=tree[p][0];
+    }
+    path.clear();
+    while(!temp.empty())
+        path.push_back(temp.pop());
+}
+
+QVector <int>F4mazemap::findpath(int x)
+{
+    QSet <int> s=vectoset(path);
+    QVector <int> temp;
+    int p=x;
+    while(s.find(p)==s.end()){
+        temp.push_back(p);
+        p=tree[p][0];
+    }
+    temp.push_back(p);
+
+    return temp;
+
 }
 

@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/imgs">
+        <file>bg1.jpg</file>
+        <file>ground1.png</file>
+        <file>block1.png</file>
+        <file>ground2.png</file>
+        <file>player1.png</file>
+        <file>bg3.jpg</file>
+        <file>obstacle1.png</file>
+        <file>obstacle2.png</file>
+        <file>road1.png</file>
+        <file>road2.png</file>
+        <file>road3.png</file>
+        <file>Hero_Left.png</file>
+        <file>Hero_Right.png</file>
+        <file>scare1.png</file>
+        <file>exit.png</file>
+        <file>final.png</file>
+    </qresource>
+</RCC>

@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
+QT+=multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -29,15 +30,48 @@ SOURCES += \
     f4mazemap.cpp \
     f4point.cpp \
     f4edge.cpp \
-    test.cpp
+    test.cpp \
+    f4mazescene.cpp \
+    f4mazemapplus.cpp \
+    f4rect.cpp \
+    f4player.cpp \
+    f4mazedemo.cpp \
+    f4setitem.cpp \
+    f4setscene.cpp \
+    mainwindow.cpp \
+    music.cpp \
+    myitem.cpp \
+    myloading.cpp \
+    myscene.cpp \
+    myview.cpp
 
 HEADERS += \
         widget.h \
     f4mazemap.h \
     f4point.h \
     f4edge.h \
-    test.h
+    test.h \
+    f4mazescene.h \
+    f4mazemapplus.h \
+    f4rect.h \
+    f4player.h \
+    f4mazedemo.h \
+    f4setitem.h \
+    f4setscene.h \
+    mainwindow.h \
+    music.h \
+    myitem.h \
+    myloading.h \
+    myscene.h \
+    myview.h \
+    f4overall.h
 
 FORMS += \
         widget.ui \
-    test.ui
+    test.ui \
+    mainwindow.ui
+
+RESOURCES += \
+    res.qrc \
+    f4resource.qrc
+RC_ICONS=myico.ico
