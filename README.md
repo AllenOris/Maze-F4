@@ -1,6 +1,7 @@
 # Dark Maze
 A Maze Game By QT
 
+<<<<<<< HEAD
 # Demo
 
 * Dark Maze目录下exe直接运行即可
@@ -19,6 +20,9 @@ A Maze Game By QT
 ![1](./Demo/demo3.jpg)
 
 游戏界面：
+=======
+## 最终版和具体文档会在周一前发布
+>>>>>>> 39a18b38e6c84c989fe7c7807f6e7c253f61a1bc
 
 ![1](./Demo/demo4.jpg)
 
