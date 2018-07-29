@@ -11,12 +11,14 @@
 #include"music.h"
 class MyScene:public QGraphicsScene
 {
+    int id_exit;
 public:
     MyScene(music *p,QApplication*a);
     int W,H;
     MyItem *item;
     music *mus;
     QApplication*a;
+
 protected:
     void timerEvent(QTimerEvent *event);
 };

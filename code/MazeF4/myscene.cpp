@@ -31,6 +31,9 @@ MyScene::MyScene(music *p,QApplication*a):a(a)
 
 void MyScene::timerEvent(QTimerEvent *event)
 {
+    if(event->timerId()==id_exit){
+        a->exit();
+    }
     QPointF p(0.05*W,0.05*H);
     QTransform transform;
     transform.rotate(+0.0);
@@ -46,6 +49,9 @@ void MyScene::timerEvent(QTimerEvent *event)
     QPointF p5(0.8*W,0.75*H);
     MyItem* item5=(MyItem*)this->itemAt(p5,transform);
     MyItem* item6=new MyItem(":/new/f4resource/image/resource/member.png",0.4,0.4,mus,false,1,a);
+    QPointF p6(0.01*W,0.75*H);
+    MyItem* item_exit=(MyItem*)this->itemAt(p6,transform);
+
     if(item->about_press&&item1->is_background==false)
     {
         this->removeItem(item1);
@@ -76,5 +82,8 @@ void MyScene::timerEvent(QTimerEvent *event)
         mus->set_index(3);
         mus->set_model(QMediaPlaylist::CurrentItemInLoop);
     }
-
+    if(item_exit->ExitFlag){
+        this->id_exit=this->startTimer(1010);
+        item_exit->ExitFlag=false;
+    }
 }

@@ -11,6 +11,7 @@
 #include <QGraphicsSceneMouseEvent>
 #include <QPointF>
 #include <QFont>
+
 class F4MazeDemo:public QGraphicsScene
 {
 private:

@@ -41,8 +41,6 @@ int F4mazemapPlus::turnplus(int p)
 int F4mazemapPlus::turnorigin(int p)
 {
     int x=p/this->total_width,y=p%this->total_width;
-    qDebug()<<p<<x<<y;
-    qDebug()<<"!"<<(int(x/2)*origin_width+x<1?0:int(y/2))<<int(x/2)*origin_width<<(x<1?0:int(y/2));
 
     return (int(x/2)*origin_width+(x<1?0:int(y/2)));
 }

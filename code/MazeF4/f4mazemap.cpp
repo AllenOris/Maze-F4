@@ -71,7 +71,6 @@ void F4mazemap::make_edge()
             this->e.append(temp);
         }
     }
-    qDebug()<<(QObject::tr("F4edge:"))<<e.size();
 }
 
 void F4mazemap::Prime()

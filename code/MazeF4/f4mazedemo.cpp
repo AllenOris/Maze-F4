@@ -17,7 +17,6 @@ F4MazeDemo::F4MazeDemo(int H, int W, QGraphicsView *):mazemap(H,W)
             map[i]=false;
         else
             map[i]=true;
-    qDebug()<<mazemap.Rec.size();
     //画地图
     for(int i=0;i<len;++i)
         if(mazemap.Rec[i].isobstacle())
@@ -61,7 +60,7 @@ F4MazeDemo::F4MazeDemo(int H, int W, QGraphicsView *):mazemap(H,W)
 
     //退出按钮
     ExitFlag=false;
-    QPixmap pix(":/imgs/exit.png");
+    QPixmap pix(":/imgs/resource/exit.png");
     pix=pix.scaledToHeight(this->Screen_Height*0.1);
     Exit=new QGraphicsPixmapItem(pix);
     Exit->setPos(this->Screen_Width*0.9,this->Screen_Height*0.9);
@@ -87,9 +86,6 @@ F4MazeDemo::~F4MazeDemo()
     this->DFS_Visit.clear();
     this->BFS_Visit.clear();
 }
-
-
-
 
 
 int F4MazeDemo::find_middle(int a,int b)
@@ -200,7 +196,6 @@ void F4MazeDemo::Show_Double_BFS_Mode(int start, int end)
 
 void F4MazeDemo::Show_LCA_Mode(int now,int end)
 {
-    qDebug()<<"now"<<now;
     LCA_Mode.clear();
     int n=mazemap.path.size();
     int start=mazemap.total_width;
@@ -214,7 +209,6 @@ void F4MazeDemo::Show_LCA_Mode(int now,int end)
     LCA_Mode.push_back(mazemap.turnplus(mazemap.path[0]));
     LCA_Mode.push_back(start);
 
-    qDebug()<<"turn"<<mazemap.turnorigin(now);
     QVector<int>temp=mazemap.findpath(mazemap.turnorigin(now));
     for(int i=0;i<temp.size()-1;++i){
         int x1=mazemap.turnplus(temp[i]);
@@ -294,15 +288,15 @@ void F4MazeDemo::keyPressEvent(QKeyEvent *event)
     int num=player->getnum();
     F4point point=mazemap.topoint(num);
     if(event->key()==Qt::Key_A){
-        player->setpix(QPixmap(":/imgs/Hero_Left.png"));
+        player->setpix(QPixmap(":/imgs/resource/Hero_Left.png"));
         if (point.get_x()>1&&!mazemap.Rec[num-1].isobstacle()){
-            player->setpix(QPixmap(":/imgs/Hero_Left.png"));
+            player->setpix(QPixmap(":/imgs/resource/Hero_Left.png"));
             player->setnum(num-1);
             player->move(-pixw,0);
         }
     }
     else if(event->key()==Qt::Key_D){
-        player->setpix(QPixmap(":/imgs/Hero_Right.png"));
+        player->setpix(QPixmap(":/imgs/resource/Hero_Right.png"));
         if (point.get_x()<mazemap.total_width-1&&!mazemap.Rec[num+1].isobstacle()){
             player->setnum(num+1);
             player->move(pixw,0);

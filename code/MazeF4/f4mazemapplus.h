@@ -1,9 +1,10 @@
 #ifndef F4MAZEMAPPLUS_H
 #define F4MAZEMAPPLUS_H
 #include "f4mazemap.h"
-#include <QRectF>
 #include "f4rect.h"
 #include "f4point.h"
+#include <QRectF>
+
 class F4mazemapPlus:public F4mazemap
 {
 protected:

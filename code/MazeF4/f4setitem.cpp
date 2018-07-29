@@ -1,30 +1,22 @@
 #include "f4Setitem.h"
-////#include<QPointF>
 #include<QDebug>
+#include "f4overall.h"
 #include <QPointF>
-//#include <QTimer>
-//#include <QObject>
 #include <QTransform>
-#include"f4overall.h"
+
 int F4voltemp;
 QRectF SetItem::boundingRect() const
 {
-    qreal penWidth = 1;
     if(is_background)
     {
         return QRectF(0,0,W,H);
     }
-//    else if(this->button_fun==16){
-//        return QRectF(W*address_x-size_w,H*address_y-size_h,size_w*3,size_h*3);
-//    }
     else
     {
         return QRectF(W*address_x,H*address_y,size_w,size_h);
     }
 
 }
-
-
 
 void SetItem::paint(QPainter *painter,
                    const QStyleOptionGraphicsItem *option,
@@ -39,42 +31,31 @@ void SetItem::paint(QPainter *painter,
         painter->drawPixmap(0,0,scaledPixmap,0,0,W,H);
     }
     else if(this->button_fun==16){
-        qDebug()<<"DDD"<<F4vol;
         QString temp=QString::number(F4vol);
-       // int2str(F4vol,temp);
-        qDebug()<<":/new/f4resource/image/resource/"+temp+".png";
         pix_pic=QPixmap(":/new/f4resource/image/resource/"+temp+".png");
         painter->drawPixmap(W*address_x,H*address_y,pix_pic,0,0,pix_pic.width(),pix_pic.height());
     }
     else if(this->button_fun==29)
     {
-        qDebug()<<"DDD"<<w0;
         QString tempw0=QString::number(w0);
-        qDebug()<<":/new/f4resource/image/resource/"+tempw0+".png";
         pix_pic=QPixmap(":/new/f4resource/image/resource/"+tempw0+".png");
         painter->drawPixmap(W*address_x,H*address_y,pix_pic,0,0,pix_pic.width(),pix_pic.height());
     }
     else if(this->button_fun==30)
     {
-        qDebug()<<"DDD"<<w1;
         QString tempw1=QString::number(w1);
-        qDebug()<<":/new/f4resource/image/resource/"+tempw1+".png";
         pix_pic=QPixmap(":/new/f4resource/image/resource/"+tempw1+".png");
         painter->drawPixmap(W*address_x,H*address_y,pix_pic,0,0,pix_pic.width(),pix_pic.height());
     }
     else if(this->button_fun==31)
     {
-        qDebug()<<"DDD"<<h0;
         QString temph0=QString::number(h0);
-        qDebug()<<":/new/f4resource/image/resource/"+temph0+".png";
         pix_pic=QPixmap(":/new/f4resource/image/resource/"+temph0+".png");
         painter->drawPixmap(W*address_x,H*address_y,pix_pic,0,0,pix_pic.width(),pix_pic.height());
     }
     else if(this->button_fun==32)
     {
-        qDebug()<<"DDD"<<h1;
         QString temph1=QString::number(h1);
-        qDebug()<<":/new/f4resource/image/resource/"+temph1+".png";
         pix_pic=QPixmap(":/new/f4resource/image/resource/"+temph1+".png");
         painter->drawPixmap(W*address_x,H*address_y,pix_pic,0,0,pix_pic.width(),pix_pic.height());
     }
@@ -87,10 +68,6 @@ void SetItem::paint(QPainter *painter,
     }
 }
 
-void SetItem::TimetoExit()
-{
-    qDebug()<<"exit";
-}
 SetItem::SetItem(QString file_n,double ad_x,double ad_y,music *p,bool back,int button,QApplication*a,QGraphicsScene*father):a(a),father(father)
 {
     this->setAcceptHoverEvents(true);
@@ -112,6 +89,7 @@ SetItem::SetItem(QString file_n,double ad_x,double ad_y,music *p,bool back,int b
     H=QGuiApplication::primaryScreen()->availableGeometry().height();
     size=new QSize(W,H);
 }
+
 void SetItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
     this->update();
@@ -131,21 +109,19 @@ void SetItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
     setCursor(MyCursor_wait);
     QTransform transform;//QT5添加
         transform.rotate(+0.0);//QT5添加
-    qDebug()<<w0<<w1;
+
     switch (button_fun)
     {
     case 2:
-        exit_press=true;                         //跳回到主页面
+        exit_press=true;            //跳回到主页面
         break;
-    case 3:                      //静音
+    case 3:                         //静音
         if(F4vol!=0)
         {
-            //rmus->stop();
             F4voltemp=F4vol;
             F4vol=0;
             this->father->itemAt(QPointF(0.495,0.3),transform)->update();
             mus->setvol(F4vol);
-            //qDebug()<<"Itemat";
         }
         break;
     case 4:                      //以原音量开启
@@ -292,14 +268,13 @@ void SetItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 
 
 }
-void SetItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
+void SetItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *)
 {
     setCursor(MyCursor);    //改变光标形状
 }
 
-void SetItem::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
+void SetItem::hoverEnterEvent(QGraphicsSceneHoverEvent *)
 {
-    qDebug()<<0;
     if(!is_background)
     {
         if(button_fun==1)
@@ -311,7 +286,7 @@ void SetItem::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
     }
 }
 
-void SetItem::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
+void SetItem::hoverLeaveEvent(QGraphicsSceneHoverEvent *)
 {
     if(button_fun==1)
     {
@@ -324,10 +299,3 @@ void SetItem::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
 
 }
 
-//void MyItem::timerEvent(QTimerEvent *event)
-//{
-//    if(event->timerId()==id1){
-//        qDebug()<<"exit";
-//    }
-
-//}

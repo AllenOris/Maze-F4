@@ -12,18 +12,12 @@ myloading::myloading(int loading_time,QPixmap pixmap,MyView* p):QSplashScreen(pi
 
 }
 
-void myloading::set_flash(QMovie movie){
-
-}
 
 void myloading::set_image(QPixmap pixmap){
     this->pixmap=pixmap;
     this->setPixmap(pixmap);
 }
 
-void myloading::set_image_list(QPixmap *pixmap[]){
-
-}
 
 void myloading::loading(){
     this->setGeometry(0,0,pixmap.width(),pixmap.height());//整个界面绝对位置
@@ -65,7 +59,5 @@ void myloading::sleep(double msec){
 }
 void myloading::finish()
 {
-
     view->show();
-
 }

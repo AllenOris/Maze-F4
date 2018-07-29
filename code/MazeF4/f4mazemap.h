@@ -33,4 +33,4 @@ public:
     ~F4mazemap();
 };
 
-#endif // F4MAZEMAP_H
+#endif

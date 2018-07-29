@@ -4,12 +4,15 @@ music::music(QString ad)
 {
     playlist = new QMediaPlaylist;
     player = new QMediaPlayer;
-    qDebug()<<ad;
-    playlist->addMedia(QUrl::fromLocalFile("C:\\Users\\ASUS\\Desktop\\QT\\new_journey\\MazeF4\\MazeF4\\resource\\begscr_bgm.mp3"));  //index 0
-    playlist->addMedia(QUrl::fromLocalFile("C:\\Users\\ASUS\\Desktop\\QT\\new_journey\\MazeF4\\MazeF4\\resource\\close_door.mp3"));  //index 1
-    playlist->addMedia(QUrl::fromLocalFile("C:\\Users\\ASUS\\Desktop\\QT\\new_journey\\MazeF4\\MazeF4\\resource\\emmmm.mp3"));       //index 2
-    playlist->addMedia(QUrl::fromLocalFile("C:\\Users\\ASUS\\Desktop\\QT\\new_journey\\MazeF4\\MazeF4\\resource\\game_bgm.mp3"));    //index 3
-
+    ad1=ad2=ad3=ad4=ad;
+    ad1=ad1.replace(ad.indexOf("MazeF4.exe"),10,"resource/begscr_bgm.mp3");
+    ad2=ad2.replace(ad.indexOf("MazeF4.exe"),10,"resource/close_door.mp3");
+    ad3=ad3.replace(ad.indexOf("MazeF4.exe"),10,"resource/emmmm.mp3");
+    ad4=ad4.replace(ad.indexOf("MazeF4.exe"),10,"resource/game_bgm.mp3");
+    playlist->addMedia(QUrl::fromLocalFile(ad1));  //index 0
+    playlist->addMedia(QUrl::fromLocalFile(ad2));  //index 1
+    playlist->addMedia(QUrl::fromLocalFile(ad3));       //index 2
+    playlist->addMedia(QUrl::fromLocalFile(ad4));    //index 3
     player->setPlaylist(playlist);
 }
 void music::play()

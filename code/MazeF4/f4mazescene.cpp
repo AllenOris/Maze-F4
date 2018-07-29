@@ -30,7 +30,7 @@ void F4MazeScene::initial()
     this->setSceneRect(QRectF(0,0,this->Width,this->Height));
 
 
-    QPixmap bgpix(":/imgs/bg3.jpg");
+    QPixmap bgpix(":/imgs/resource/bg3.jpg");
     QSize *bgsize=new QSize(this->Width,this->Height);
     bgpix=bgpix.scaled(*bgsize);
     this->setBackgroundBrush(bgpix);//背景图
@@ -39,8 +39,8 @@ void F4MazeScene::initial()
     QPixmap pix2;
     //this->setSceneRect(QRectF(QPointF(0,0),QPointF(1920,1080)));
 
-    pix.load(":/imgs/road2.png");
-    pix2.load(":/imgs/obstacle2.png");
+    pix.load(":/imgs/resource/road2.png");
+    pix2.load(":/imgs/resource/obstacle2.png");
 
 
     QSize pixsize(pix_width,pix_width);
@@ -81,7 +81,7 @@ void F4MazeScene::initial()
 
     //添加终点
     int end=mazemap.Rec.size()-mazemap.total_width-1;
-    QPixmap pix_final(":/imgs/final.png");
+    QPixmap pix_final(":/imgs/resource/final.png");
     pix_final=pix_final.scaled(QSize(mazemap.Rec[0].width(),mazemap.Rec[0].height()));
     QGraphicsPixmapItem *final=new QGraphicsPixmapItem(pix_final);
     final->setPos(mazemap.Rec[end].left(),mazemap.Rec[end].top());
@@ -93,7 +93,7 @@ void F4MazeScene::initial()
     ScareItem=NULL;
 
     //退出按钮
-    ExitItem =new QGraphicsPixmapItem(QPixmap(":/imgs/exit.png"));
+    ExitItem =new QGraphicsPixmapItem(QPixmap(":/imgs/resource/exit.png"));
     ExitItem->setPos(0,this->Height*0.5);
     this->addItem(ExitItem);
     ExitFlag=false;
@@ -104,7 +104,6 @@ void F4MazeScene::initial()
 
 void F4MazeScene::restartTimer()
 {
-    qDebug()<<"restartTimer";
     this->startTimer(100);
 }
 
@@ -119,7 +118,7 @@ void F4MazeScene::timerEvent(QTimerEvent *)
         delete ScareItem;
         ScareItem=NULL;
     }
-    ScareItem=new QGraphicsPixmapItem(QPixmap(":/imgs/scare1.png").scaledToWidth((this->Width-this->pix_width*mazemap.total_width)/2));
+    ScareItem=new QGraphicsPixmapItem(QPixmap(":/imgs/resource/scare1.png").scaledToWidth((this->Width-this->pix_width*mazemap.total_width)/2));
     ScareItem->setOpacity(qreal(qMin(cnt,abs(op-cnt)))/100);
     ScareItem->setPos(x,y);
     this->addItem(ScareItem);
@@ -138,23 +137,19 @@ void F4MazeScene::mousePressEvent(QGraphicsSceneMouseEvent *event)
 
 void F4MazeScene::keyPressEvent(QKeyEvent *event)
 {
-//    qDebug()<<keypressed;
-//    if(keypressed)
-//        return;
-//    this->keypressed=true;
 
     int num=player->getnum();
     F4point point=mazemap.topoint(num);
     if(event->key()==Qt::Key_A){
-        player->setpix(QPixmap(":/imgs/Hero_Left.png"));
+        player->setpix(QPixmap(":/imgs/resource/Hero_Left.png"));
         if (point.get_x()>1&&!mazemap.Rec[num-1].isobstacle()){
-            player->setpix(QPixmap(":/imgs/Hero_Left.png"));
+            player->setpix(QPixmap(":/imgs/resource/Hero_Left.png"));
             player->setnum(num-1);
             player->move(-this->pix_width,0);
         }
     }
     else if(event->key()==Qt::Key_D){
-        player->setpix(QPixmap(":/imgs/Hero_Right.png"));
+        player->setpix(QPixmap(":/imgs/resource/Hero_Right.png"));
         if (( (point.get_x()==mazemap.total_width-1&&point.get_y()==mazemap.total_height-1)
              ||(point.get_x()<mazemap.total_width-1))&&!mazemap.Rec[num+1].isobstacle()){
             player->setnum(num+1);

@@ -26,11 +26,9 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        widget.cpp \
     f4mazemap.cpp \
     f4point.cpp \
     f4edge.cpp \
-    test.cpp \
     f4mazescene.cpp \
     f4mazemapplus.cpp \
     f4rect.cpp \
@@ -38,7 +36,6 @@ SOURCES += \
     f4mazedemo.cpp \
     f4setitem.cpp \
     f4setscene.cpp \
-    mainwindow.cpp \
     music.cpp \
     myitem.cpp \
     myloading.cpp \
@@ -46,11 +43,9 @@ SOURCES += \
     myview.cpp
 
 HEADERS += \
-        widget.h \
     f4mazemap.h \
     f4point.h \
     f4edge.h \
-    test.h \
     f4mazescene.h \
     f4mazemapplus.h \
     f4rect.h \
@@ -58,7 +53,6 @@ HEADERS += \
     f4mazedemo.h \
     f4setitem.h \
     f4setscene.h \
-    mainwindow.h \
     music.h \
     myitem.h \
     myloading.h \
@@ -66,10 +60,7 @@ HEADERS += \
     myview.h \
     f4overall.h
 
-FORMS += \
-        widget.ui \
-    test.ui \
-    mainwindow.ui
+FORMS +=
 
 RESOURCES += \
     res.qrc \

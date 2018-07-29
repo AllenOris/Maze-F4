@@ -1,22 +1,28 @@
-# Maze-F4
-a maze by qt
+# Dark Maze
+A Maze Game By QT
 
-## 要求的功能
+# Demo
 
-1. 改变迷宫大小
+* Dark Maze目录下exe直接运行即可
+* 或编译code目录下源码，将resource文件夹复制到编译后exe的同目录（QMediaPlayer库不支持音乐导入资源文件，这里使用的相对目录）
 
-2. 风格订制
+游戏加载：
 
----
+![1](./Demo/demo1.jpg)
 
+主界面：
 
+![1](./Demo/demo2.jpg)
 
-## 希望实现的功能
+设置界面：
 
-1. 计时功能
-2. BGM
-3. 移动式地图
-4. 黑暗区域
+![1](./Demo/demo3.jpg)
 
+游戏界面：
 
+![1](./Demo/demo4.jpg)
+
+算法演示界面：
+
+![1](./Demo/demo5.jpg)
 

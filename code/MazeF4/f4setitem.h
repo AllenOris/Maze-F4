@@ -21,9 +21,8 @@
 
 class SetItem : public QGraphicsItem
 {
-
-    QGraphicsScene *father;
     QApplication *a;
+    QGraphicsScene *father;
 public:
     SetItem(QString file_n,double ad_x,double ad_y,music *p,bool back,int button, QApplication*,QGraphicsScene*father=NULL);
     QRectF boundingRect() const;
@@ -41,14 +40,11 @@ public:
     bool exit_press=false,demo_press=false;
     bool is_background;
     int button_fun;
-private slots:
-    void TimetoExit();
 protected:
     void mousePressEvent(QGraphicsSceneMouseEvent *event);
     void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
     void hoverEnterEvent(QGraphicsSceneHoverEvent *event);
     void hoverLeaveEvent(QGraphicsSceneHoverEvent *event);
-   // void timerEvent(QTimerEvent * event);
 
 };
 #endif // F4SETITEM_H

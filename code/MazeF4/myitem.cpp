@@ -83,8 +83,7 @@ void MyItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
     case 2:                       //exit
         mus->set_model(QMediaPlaylist::CurrentItemOnce);
         mus->set_index(1);
-        for(qint64 i=0;i<1000000000;++i);
-        a->exit();
+        this->ExitFlag=true;
         break;
     case 3:                       //about
         mus->set_model(QMediaPlaylist::CurrentItemOnce);
@@ -116,9 +115,8 @@ void MyItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 
 }
 
-void MyItem::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
+void MyItem::hoverEnterEvent(QGraphicsSceneHoverEvent *)
 {
-    qDebug()<<0;
     if(!is_background)
     {
         if(button_fun==1||button_fun==3)
@@ -130,7 +128,7 @@ void MyItem::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
     }
 }
 
-void MyItem::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
+void MyItem::hoverLeaveEvent(QGraphicsSceneHoverEvent *)
 {
     if(button_fun==1||button_fun==3)
     {

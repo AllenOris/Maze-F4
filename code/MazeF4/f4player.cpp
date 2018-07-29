@@ -48,7 +48,7 @@ F4player::F4player(QRectF &rec,int num, QGraphicsScene *father):num(num),father(
     //this->setCacheMode(QGraphicsItem::DeviceCoordinateCache);
     this->setZValue(1);//叠放次序
     this->setFlag(QGraphicsItem::ItemIsFocusable,true);
-    pix.load(":/imgs/Hero_Right.png");
+    pix.load(":/imgs/resource/Hero_Right.png");
     pix=pix.scaled(QSize(rec.width(),rec.height()));
     this->x=rec.left();
     this->y=rec.top();

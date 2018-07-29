@@ -5,6 +5,7 @@
 #include <QMediaPlayer>
 #include <QUrl>
 #include<QString>
+
 class music
 {
 public:
@@ -18,6 +19,7 @@ public:
     void set_index(int index);
     QMediaPlaylist* playlist;
     QMediaPlayer* player;
+    QString ad1,ad2,ad3,ad4;
 };
 
 #endif // MUSIC_H

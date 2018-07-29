@@ -8,6 +8,7 @@
 #include <QGraphicsSceneMouseEvent>
 #include "f4mazemapplus.h"
 #include "f4player.h"
+
 class F4MazeScene: public QGraphicsScene//,public QObject
 {
    // Q_OBJECT

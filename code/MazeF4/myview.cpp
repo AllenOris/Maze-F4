@@ -9,11 +9,12 @@ MyView::MyView(music *p,QApplication*a):a(a)
     this->demo_scene=NULL;
     this->map_scene=NULL;
     beg_scene->setItemIndexMethod(QGraphicsScene::BspTreeIndex);
+
     // 视图关联场景
     this->setScene(beg_scene);
 }
 
-void MyView::timerEvent(QTimerEvent *event)
+void MyView::timerEvent(QTimerEvent *)
 {
     QPointF p1(beg_scene->W*0.8,beg_scene->H*0.75);
     QTransform transform;
