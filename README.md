@@ -118,17 +118,17 @@ WASD控制移动方向
   ```c++
   f4setitem.h/cpp		设置界面图形项类，继承QGraphicsItem
   f4setscene.h/cpp	设置界面场景类,继承QGraphicsScene
-  f4overall.h			声明全局变量头文件，对音量大小进行调控
+  f4overall.h      声明全局变量头文件，对音量大小进行调控
   ```
 
 * [Lionelsey ](https://github.com/Lionelsey)
 
   ```c++
-  music.h/cpp		音乐播放类
-  myitem.h/cpp	主界面图形项类,继承QGraphicsItem
+  music.h/cpp   音乐播放类
+  myitem.h/cpp  主界面图形项类,继承QGraphicsItem
   myscene.h/cpp	主界面场景类，继承QGraphicsScene
-  myview.h/cpp	游戏视图类,继承QGraphicsView
-  main.cpp	    主函数
+  myview.h/cpp  游戏视图类,继承QGraphicsView
+  main.cpp      主函数
   ```
 
 ## 遇到的问题
