@@ -1,10 +1,12 @@
 # Dark Maze 1.0
 A Maze Game By QT
 
-## Demo
+## 安装
 
 * Dark Maze1.0目录下exe直接运行即可
 * 或编译code目录下源码，将resource文件夹复制到编译后exe的同目录（QMediaPlayer库不支持音乐导入资源文件，这里使用的相对目录）
+
+## 展示
 
 游戏加载：
 
