@@ -9,7 +9,7 @@ QT+=multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = MazeF4
+TARGET = DarkMaze
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use

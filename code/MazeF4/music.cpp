@@ -5,10 +5,12 @@ music::music(QString ad)
     playlist = new QMediaPlaylist;
     player = new QMediaPlayer;
     ad1=ad2=ad3=ad4=ad;
-    ad1=ad1.replace(ad.indexOf("MazeF4.exe"),10,"resource/begscr_bgm.mp3");
-    ad2=ad2.replace(ad.indexOf("MazeF4.exe"),10,"resource/close_door.mp3");
-    ad3=ad3.replace(ad.indexOf("MazeF4.exe"),10,"resource/emmmm.mp3");
-    ad4=ad4.replace(ad.indexOf("MazeF4.exe"),10,"resource/game_bgm.mp3");
+    QString Name="DarkMaze.exe";
+    int len=Name.length();
+    ad1=ad1.replace(ad.indexOf(Name),len,"resource/begscr_bgm.mp3");
+    ad2=ad2.replace(ad.indexOf(Name),len,"resource/close_door.mp3");
+    ad3=ad3.replace(ad.indexOf(Name),len,"resource/emmmm.mp3");
+    ad4=ad4.replace(ad.indexOf(Name),len,"resource/game_bgm.mp3");
     playlist->addMedia(QUrl::fromLocalFile(ad1));  //index 0
     playlist->addMedia(QUrl::fromLocalFile(ad2));  //index 1
     playlist->addMedia(QUrl::fromLocalFile(ad3));       //index 2
