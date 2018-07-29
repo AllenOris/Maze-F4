@@ -90,7 +90,7 @@ WASD控制移动方向
 | AllenTaken  | 迷宫及迷宫算法     |
 | Woodencross | 加载界面及PPT制作  |
 | Joockie     | 设置界面及图片加工 |
-| Lionelsey   | 主界面及音乐加载   |
+| Lionelsey   | 主界面，音乐加载及页面整合 |
 
 ### 代码归属
 
